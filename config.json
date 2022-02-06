@@ -65,8 +65,8 @@
         "markets_refresh_interval": 1,
         "skip_pair_validation": false,
         "skip_open_order_update": false,
-        "key": "f9e2c74cec7d5dfe166a625b8412166b68c845cbb369bf096ba2eaa16bcfbd22",
-        "secret": "710f7af303b374f0387656a84d7b908b46a91f69522365a5715e99d0656c634454395beadc9b15102c26a2df804378c11646371c512d922d5111e5028914247a",
+        "key": "PRIVATEKEY",
+        "secret": "SECRETKEY",
         "ccxt_config": {"enableRateLimit": true},
         "ccxt_async_config": {
             "enableRateLimit": true,
@@ -135,8 +135,8 @@
     },
     "telegram": {
         "enabled": true,
-        "token": "5048472495:AAEqCNpVrOXF3P0KYi38bXJDvfQlPnQkmm0",
-        "chat_id": "-1001517624331",
+        "token": "TOKEN",
+        "chat_id": "CHATID",
         "notification_settings": {
             "status": "on",
             "warning": "on",
@@ -167,7 +167,7 @@
         "listen_port": 3286,
         "verbosity": "error",
         "enable_openapi": false,
-        "jwt_secret_key": "f1f7f034e57060cd43d4a234cc6f8cb39312dbf180aa5cf29ee1f9d8b086ba8d",
+        "jwt_secret_key": "SECRETKEY",
         "CORS_origins": [],
         "username": "dfftrader",
         "password": "+Align*the$TARS89!"
