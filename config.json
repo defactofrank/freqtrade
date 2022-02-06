@@ -1,0 +1,191 @@
+
+{
+    "max_open_trades": 3,
+    "stake_currency": "EUR",
+    "stake_amount": 1000,
+    "tradable_balance_ratio": 0.99,
+    "amount_reserve _percent": 0.5,
+    "amend_last_stake_amount": true,
+    "last_stake_amount_min_ratio": 0.25,
+    "use_sell_signal": true,
+    "sell_profit_only": false,
+    "sell_profit_offset": 0.15,
+    "ignore_roi_if_buy_signal": true,
+    "ignore_buying_expired_candle_after": 500,
+    "fiat_display_currency": "EUR",
+    "timeframe": "1d",
+    "dry_run": true,
+    "cancel_open_orders_on_exit": false,
+    "stoploss": -0.25,
+    "minimal_roi": {
+        "0": 0.250,
+        "115": 0.145,
+        "268": 0.05,
+        "330": 0
+    },
+    "unfilledtimeout": {
+        "buy": 10,
+        "sell": 10,
+        "exit_timeout_count": 0,
+        "unit": "minutes"
+    },
+    "bid_strategy": {
+        "price_side": "bid",
+        "ask_last_balance": 0.0,
+        "use_order_book": true,
+        "order_book_top": 1,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "ask_strategy": {
+        "price_side": "ask",
+        "use_order_book": true,
+        "order_book_top": 1
+    },
+    "order_types": {
+        "buy": "limit",
+        "sell": "limit",
+        "emergencysell": "market",
+        "forcesell": "market",
+        "forcebuy": "market",
+        "stoploss": "market",
+        "stoploss_on_exchange": false,
+        "stoploss_on_exchange_interval": 60
+    },
+    "order_time_in_force": {
+        "buy": "gtc",
+        "sell": "gtc"
+    },
+    "exchange": {
+        "name": "bitvavo",
+        "sandbox": false,
+        "log_responses": true,
+        "markets_refresh_interval": 1,
+        "skip_pair_validation": false,
+        "skip_open_order_update": false,
+        "key": "PRIVATEKEY",
+        "secret": "SECRETKEY",
+        "ccxt_config": {"enableRateLimit": true},
+        "ccxt_async_config": {
+            "enableRateLimit": true,
+            "rateLimit": 500,
+            "aiohttp_trust_env": false
+        },
+        "pair_whitelist": [
+            "BTC/EUR",
+            "ETH/EUR",
+            "SOL/EUR",
+            "ADA/EUR",
+            "XRP/EUR",
+            "DOT/EUR",
+            "AVAX/EUR",
+            "DOGE/EUR",
+            "SHIB/EUR",
+            "MATIC/EUR",
+            "LTC/EUR",
+            "LINK/EUR",
+            "DAI/EUR",
+            "TRX/EUR",
+            "XLM/EUR",
+            "SAND/EUR",
+            "FTM/EUR",
+            "POND/EUR",
+            "BAT/EUR",
+            "HOT/EUR",
+            "AAVE/EUR",
+        ],
+        "pair_blacklist": [
+
+        ],
+        "outdated_offset": 5
+    },
+    "pairlists": [
+        {"method": "StaticPairList"},
+        {"method": "AgeFilter", "min_days_listed": 3},
+        {"method": "PrecisionFilter"},
+        {"method": "PriceFilter", "low_price_ratio": 0.05, "min_price": 0.05},
+        {"method": "SpreadFilter", "max_spread_ratio": 0.05},
+        {
+            "method": "RangeStabilityFilter",
+            "lookback_timeframe": "1h",
+            "lookback_period": 12,
+            "min_rate_of_change": 0.01,
+            "max_rate_of_change": 5000,
+            "refresh_period": 1400,
+            "number_assets": 20,
+            "sort_key": "quoteVolume",
+            "min_value": 0,
+        },
+    ],
+    "edge": {
+        "enabled": false,
+        "process_throttle_secs": 3600,
+        "calculate_since_number_of_days": 7,
+        "allowed_risk": 0.01,
+        "stoploss_range_min": -0.01,
+        "stoploss_range_max": -0.1,
+        "stoploss_range_step": -0.01,
+        "minimum_winrate": 0.60,
+        "minimum_expectancy": 0.20,
+        "min_trade_number": 10,
+        "max_trade_duration_minute": 1440,
+        "remove_pumps": false
+    },
+    "telegram": {
+        "enabled": true,
+        "token": "TOKEN",
+        "chat_id": "CHATID",
+        "notification_settings": {
+            "status": "on",
+            "warning": "on",
+            "startup": "on",
+            "buy": "on",
+            "buy_fill": "on",
+            "sell": {
+                "roi": "on",
+                "emergency_sell": "on",
+                "force_sell": "on",
+                "sell_signal": "on",
+                "trailing_stop_loss": "on",
+                "stoploss_on_exchange": "on",
+                "custom_sell": "on"
+            },
+            "sell_fill": "on",
+            "buy_cancel": "on",
+            "sell_cancel": "on",
+            "protection_trigger": "off",
+            "protection_trigger_global": "on"
+        },
+        "reload": true,
+        "balance_dust_level": 0.05
+    },
+    "api_server": {
+        "enabled": false,
+        "listen_ip_address": "127.0.0.1",
+        "listen_port": 3286,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "SECRETKEY",
+        "CORS_origins": [],
+        "username": "USERNAME",
+        "password": "PASSWORD"
+    },
+    "bot_name": "DEFACTOFRANK",
+    "db_url": "sqlite:///tradesv3.sqlite",
+    "initial_state": "running",
+    "forcebuy_enable": false,
+    "logfile": "syslog:/dev/log",
+    "internals": {
+        "process_throttle_secs": 5,
+        "heartbeat_interval": 300,
+        "sd_notify": true
+    },
+    "disable_dataframe_checks": false,
+    "user_data_dir": "user_data",
+    "strategy": "keltnerchannel",
+    "strategy_path": "user_data/strategies",
+    "dataformat_ohlcv": "json",
+    "dataformat_trades": "jsongz"
+}
